@@ -203,6 +203,7 @@ input{-webkit-appearance:none; resize: none;}
 .c3{color: #333!important}
 .red{color: #fc705d!important;}
 .mainBc{border-color: #48d1b0!important;}
+.bordertop{border-top: 1px solid #0fd1b1;}
 .bordernone{border:none!important;}
 .bgfff{background: #fff!important;}
 .fs30{font-size:1.875rem!important;}
