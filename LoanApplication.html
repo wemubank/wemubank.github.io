@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>微木-借款申请</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/sweet-alert.css" />
+	<!-- <link rel="stylesheet" href="css/ytui.css" /> -->
+	<link rel="stylesheet" href="css/index.css" />
+	<!-- <script src="js/jquery-1.11.2.min.js"></script> -->
+	<script src="js/common.js"></script>
+	<script src="js/html-size-calculation.js"></script>
+	<script src="js/sweet-alert.min.js"></script>
+
+</head>
+<body style="padding-bottom:2.7133rem; background:#ebebeb">
+	<header class="header-bar bgfff shaow">
+		<a href="javascript:history.back(-1);" class="header-left">
+			<i class="icon"></i>
+		</a>
+		<h2 class="header-title">借款申请</h2>
+	</header>
+	<!-- 当前借款 -->
+	<div class="borrowed-wrap loadMsg-wrap">
+		<dl class="dl1 clearfix">
+			<dt>借款金额</dt>
+			<dd></dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt class="fs30">500</dt>
+			<dd></dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>借款发放之日起，开始计息</dt>
+			<dd></dd>
+		</dl>
+	</div>
+	<div class="borrowed-wrap loadMsg-wrap">
+		<dl class="dl1 clearfix">
+			<dt>借款天数</dt>
+			<dd>14天(提前还款无手续费)</dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>还款金额</dt>
+			<dd>¥550.00</dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>本金</dt>
+			<dd>¥500.00</dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>利息</dt>
+			<dd>¥2.50</dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>数据使用费</dt>
+			<dd>¥17.50</dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>账号管理及服务费</dt>
+			<dd>¥30.00</dd>
+		</dl>
+	</div>
+	<div class="borrowed-wrap loadMsg-wrap mainBc">
+		<dl class="dl1 clearfix">
+			<dt>还款方式</dt>
+			<dd>支付宝</dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>还款日期(已放款时间为准)</dt>
+			<dd>2016-12-10</dd>
+		</dl>
+		<dl class="dl1 clearfix">
+			<dt>同意 <a class="mainC" href="javascript:;">微木金融服务合同</a></dt>
+			<dd>¥500.00</dd>
+		</dl>
+	</div>
+
+	<div class="myBackMonye-wrap">
+		<a class="myBackMonye" id="myBackMonye" href="javascript:;">确认申请</a>
+	</div>
+
+</body>
+<script>
+
+bind(id('myBackMonye'),'touchstart',function(){
+	swal({title:'', 
+		text:'请先完成资料认证',
+  	  showCancelButton: true,   
+  	  confirmButtonColor: "#fff",
+  	  confirmButtonText: "知道了",   
+  	  closeOnConfirm: true },
+  	  function(isConfirm){
+		if(isConfirm){
+			window.location.href = './myInformation.html'
+		}else{
+			window.location.href = '#'
+		};
+	});	
+})
+
+
+</script>
+
+
+<style>
+/* 弹框样式 */
+@media (max-width: 540px){
+.sweet-alert {
+left: 2rem!important;
+right: 2rem!important;
+}
+}
+.sweet-alert{padding:4rem 0px 0px; position: fixed; background: #fff6f8;}
+.sweet-alert h2{position: absolute; width:4rem; height:5rem; border-radius:2rem; left:50%; top: -2rem;margin-left:-2rem; background: #fff6f8 url(images/icon1.png) 13px 12px no-repeat; background-size:2.5rem auto; } 
+.sweet-alert button.cancel{margin:0; position: absolute; right:-10px; top: -10px; background: #fff6f8; width:1.5rem; height:1.5rem;padding:0; color:transparent; border-radius:50%;}
+.sweet-alert button.cancel:after{position: absolute; content:"\e623"; left:0; top: 0; width:100%; height:100%; color:#333; font-size:1.4rem; }
+.sweet-alert button.confirm{margin:2.5rem 0 0;display:block; width:100%; -text-align: center; color:#333; border-radius:0 0 0.3rem 0.3rem; border-top: 1px solid #fceaee;}
+</style>
+</html>

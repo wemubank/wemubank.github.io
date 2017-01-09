@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>微木-交易记录</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<!-- <link rel="stylesheet" href="css/ytui.css" /> -->
+	<link rel="stylesheet" href="css/index.css" />
+	<!-- <script src="js/jquery-1.11.2.min.js"></script> -->
+	<script src="js/common.js"></script>
+	<script src="js/html-size-calculation.js"></script>
+
+</head>
+<body style="padding-bottom:5.4266rem; background:#ebebeb">
+	<header class="header-bar bgfff">
+		<a href="javascript:history.back(-1);" class="header-left">
+			<i class="icon"></i>
+		</a>
+		<h2 class="header-title">交易记录</h2>
+	</header>
+	<div class="CommonProblem transactionRecord">
+        <ul class="tab_title clearfix" id="tab_title">
+            <li class="li1">借款</li>
+            <li class="li3">还款</li>
+            <i class="move" id="move" style=""></i>
+        </ul>
+
+        <ul class="record-list" id="record-list">
+        	<li>
+        		<div class="borrowed-wrap loadMsg-wrap">
+					<a href="./loanDetail.html">
+						<dl class="dl1 clearfix">
+							<dt>编号</dt>
+							<dd>100001</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>申请日期</dt>
+							<dd>2016-12-12</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>方案</dt>
+							<dd>¥1000.00/14天</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>还款状态</dt>
+							<dd>申请成功</dd>
+						</dl>
+					</a>
+				</div>
+				<div class="borrowed-wrap loadMsg-wrap">
+					<a href="./loanDetail.html">
+						<dl class="dl1 clearfix">
+							<dt>编号</dt>
+							<dd>100001</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>申请日期</dt>
+							<dd>2016-12-12</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>方案</dt>
+							<dd>¥1000.00/14天</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>还款状态</dt>
+							<dd>申请失败</dd>
+						</dl>
+					</a>
+				</div>
+				<div class="borrowed-wrap loadMsg-wrap">
+					<a href="./loanDetail.html">
+						<dl class="dl1 clearfix">
+							<dt>编号</dt>
+							<dd>100001</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>申请日期</dt>
+							<dd>2016-12-12</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>方案</dt>
+							<dd>¥1000.00/14天</dd>
+						</dl>
+						<dl class="dl1 clearfix">
+							<dt>还款状态</dt>
+							<dd class="mainC">申请审核中</dd>
+						</dl>
+					</a>
+				</div>
+        	</li>
+        	<li style="display:none;">
+        		<div class="borrowed-wrap loadMsg-wrap">
+					<dl class="dl1 clearfix">
+						<dt>编号</dt>
+						<dd>100001</dd>
+					</dl>
+					<dl class="dl1 clearfix">
+						<dt>申请日期</dt>
+						<dd>2016-12-12</dd>
+					</dl>
+					<dl class="dl1 clearfix">
+						<dt>方案</dt>
+						<dd>¥1000.00/14天</dd>
+					</dl>
+					<dl class="dl1 clearfix">
+						<dt>还款状态</dt>
+						<dd><a href="./backMoneyDetails.html" class="mainC">未还款</a></dd>
+					</dl>
+				</div>
+				<div class="borrowed-wrap loadMsg-wrap">
+					<dl class="dl1 clearfix">
+						<dt>编号</dt>
+						<dd>100001</dd>
+					</dl>
+					<dl class="dl1 clearfix">
+						<dt>申请日期</dt>
+						<dd>2016-12-12</dd>
+					</dl>
+					<dl class="dl1 clearfix">
+						<dt>方案</dt>
+						<dd>¥1000.00/14天</dd>
+					</dl>
+					<dl class="dl1 clearfix">
+						<dt>还款状态</dt>
+						<dd><a href="./backMoneyDetails.html" class="">还款成功</a></dd>
+					</dl>
+				</div>
+        	</li>
+        </ul>
+    </div>
+<script src="js/move.js"></script>
+<script>
+tabRecord();
+function tabRecord(){
+	var tabTitle = id('tab_title')
+	var titLi = tabTitle.getElementsByTagName('li');
+	var oRecordList = id('record-list');
+	var aRecordList = oRecordList.getElementsByTagName('li');
+
+
+	for(var i=0;i<titLi.length;i++){
+		titLi[i].index = i;
+		bind(titLi[i],'touchend',function(){
+			startMove(id('move'),{left:this.offsetWidth*this.index});
+			for(var i=0;i<titLi.length;i++){
+				aRecordList[i].style.display = 'none';
+			}
+			aRecordList[this.index].style.display = 'block';
+		})
+
+	}
+}
+</script>
+
+
+</body>
+</html>
